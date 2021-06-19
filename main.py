@@ -1,6 +1,6 @@
 from getting_jobs_from_saramin_url import crolling, save_list_dict_job_to_csv
 
-from flask import Flask, render_template, request, redirect, send_file
+from flask import Flask, render_template, request, send_file
 
 app = Flask("Saramin Scrapper")
 db = {}
