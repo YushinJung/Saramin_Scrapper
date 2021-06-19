@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Saramin Scrapper</title>
+    <style>
+        section{
+            display:grid;
+            gap:20px;
+            grid-template-columns: repeat(6, 1fr);
+        }
+    </style>
+</head>
+
+<body>
+	<h1>Job Search</h1>
+    <h3>Found {{word_input}} jobs: total {{total_job}} displaying {{display_number}} jobs</h3>
+
+    <a href="/export?word_input={{word_input}}">Export to CSV</a>
+	
+    <section>
+        <h4>Company</h4>
+        <h4>Location</h4>
+        <h4>Deadline</h4>
+        <h4>Position</h4>
+        <h4>Salary</h4>
+        <h4>Link</h4>
+        {% for job in jobs %}
+            <span>{{job.company_name}}</span>
+            <span>{{job.location}}</span>
+            <span>{{job.deadline}}</span>
+            <span>{{job.position}}</span>
+            <span>{{job.salary}}</span>
+            <a href="{{job.link}}" target="_blank">Info</a>
+        {% endfor %}
+    </section>
+  </body>
+</html>
